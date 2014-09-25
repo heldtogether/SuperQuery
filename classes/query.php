@@ -16,7 +16,13 @@ class JS_Models_Query {
 	public function get_posts(){
 
 		$raw_posts = $this->wp_query->get_posts();
-		die(var_export($raw_posts));
+
+		$posts = array();
+		foreach($raw_posts as $post){
+			$posts[] = new JS_Models_Model($post);
+		}
+
+		die(var_export($posts));
 
 	}
 
