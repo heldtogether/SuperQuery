@@ -37,4 +37,13 @@ class JS_Models_Model {
 	}
 
 
+	public function __get($property){
+
+		if(property_exists($this->post, $property)){
+			return $this->post->$property;
+		}
+
+		throw new InvalidArgumentException;
+	}
+
 }
