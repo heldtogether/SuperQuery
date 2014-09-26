@@ -1,7 +1,7 @@
 <?php 
 
 
-spl_autoload_register('js_models_spl_autoload');
+spl_autoload_register('superquery_spl_autoload');
 
 /**
  * Automatically load WP_Models classes
@@ -9,10 +9,10 @@ spl_autoload_register('js_models_spl_autoload');
  * @param string Class name
  * @return void
  **/
-function js_models_spl_autoload($class_name) {
+function superquery_spl_autoload($class_name) {
 
 	$file = strtolower($class_name);
-	$prefix = 'js_models';
+	$prefix = 'sq_';
 
 	if(substr($file, 0, strlen($prefix)) !== $prefix) {
 		return false;
@@ -20,7 +20,7 @@ function js_models_spl_autoload($class_name) {
 
 	$file = str_replace('_', '/', $file);
 	$file = substr($file, strlen($prefix));
-	$file = JS_MODELS_DIR . "/classes/$file.php";
+	$file = SUPERQUERY_DIR . "/classes/$file.php";
 
 	if(file_exists($file)) {
 		include $file;

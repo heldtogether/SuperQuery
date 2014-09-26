@@ -1,6 +1,6 @@
 <?php
 
-class JS_Models_Query {
+class SQ_Query {
 
 
 	protected $wp_query;
@@ -19,11 +19,21 @@ class JS_Models_Query {
 
 		$posts = array();
 		foreach($raw_posts as $post){
-			$posts[] = new JS_Models_Model($post);
+			$posts[] = $post;
 		}
 
 		die(var_export($posts));
 
+	}
+
+
+	public function __get($property){
+
+		if(property_exists($this->wp_query, $property)){
+			return $this->wp_query->$property;
+		}
+
+		throw new InvalidArgumentException;
 	}
 
 

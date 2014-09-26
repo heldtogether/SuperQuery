@@ -1,6 +1,6 @@
 <?php
 
-class JS_Models_Model {
+class SQ_Model {
 
 	/**
 	 *  ID                 The ID of the post
