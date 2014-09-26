@@ -13,20 +13,6 @@ class SQ_Query {
 	}
 
 
-	public function get_posts(){
-
-		$raw_posts = $this->wp_query->get_posts();
-
-		$posts = array();
-		foreach($raw_posts as $post){
-			$posts[] = $post;
-		}
-
-		die(var_export($posts));
-
-	}
-
-
 	public function __get($property){
 
 		if(property_exists($this->wp_query, $property)){
@@ -34,6 +20,16 @@ class SQ_Query {
 		}
 
 		throw new InvalidArgumentException;
+	}
+
+
+	public function __call($method, $arguments){
+
+		if(method_exists($this->wp_query, $method)){
+			return $this->wp_query->$method();
+		}
+
+		throw new BadMethodCallException;
 	}
 
 
