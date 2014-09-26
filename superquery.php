@@ -5,7 +5,7 @@
  */
 /*
 Plugin Name: SuperQuery
-Plugin URI: 
+Plugin URI: https://github.com/heldtogether/superquery
 Description: A plugin to extend WP_Query to return proper PHP objects rather than relying on get_post_meta().
 Author: Josh Sephton
 Version: 0.1.0
