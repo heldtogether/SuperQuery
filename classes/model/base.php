@@ -1,6 +1,16 @@
 <?php
 
-
+/**
+ * Base Model. 
+ * 
+ * Requires it's own properties
+ * for each of the WP_Post properties else
+ * functions like `get_the_title()` don't 
+ * work as expected.
+ *
+ * @package SuperQuery
+ * @author Josh Sephton
+ **/
 class SQ_Model_Base {
 
 	/**
