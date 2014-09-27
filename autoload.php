@@ -4,7 +4,7 @@
 spl_autoload_register('superquery_spl_autoload');
 
 /**
- * Automatically load WP_Models classes
+ * Automatically load SuperQuery classes
  *
  * @param string Class name
  * @return void

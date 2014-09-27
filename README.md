@@ -1,7 +1,7 @@
 SuperQuery
 ==========
 
-SuperQuery is a Wordpress plugin which hijacks the `WP_Query` loop to return user defined models instead of standard `WP_Post`. If you are highly customising Wordpres, you may wish to define models for your post types to save you from calling `get_post_meta()` throughout your theme.
+SuperQuery is a Wordpress plugin which hijacks the `WP_Query` loop to return user defined models instead of standard `WP_Post`. If you are highly customising Wordpress, you may wish to define models for your post types to save you from calling `get_post_meta()` throughout your theme.
 
 
 ## Install
