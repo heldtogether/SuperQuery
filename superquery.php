@@ -23,6 +23,7 @@ Author URI: http://joshsephton.com/
 	include SUPERQUERY_DIR . 'classes/superquery.php';
 
 
+// Hooks
 function make_superquery($query){
 	if(!is_admin()){
 		global $wp_query;
