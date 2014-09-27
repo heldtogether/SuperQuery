@@ -21,13 +21,3 @@ Author URI: http://joshsephton.com/
 // Includes
 	include SUPERQUERY_DIR . 'autoload.php';
 	include SUPERQUERY_DIR . 'classes/superquery.php';
-
-
-// Hooks
-function make_superquery($query){
-	if(!is_admin()){
-		global $wp_query;
-		$wp_query = new SQ_Query($query);
-	}
-}
-add_action('pre_get_posts', 'make_superquery');
