@@ -88,7 +88,7 @@ class SQ_Query {
 	 **/
 	public function __call($method, $arguments){
 		if(method_exists($this->wp_query, $method)){
-			return $this->wp_query->$method();
+			return $this->wp_query->$method($arguments);
 		}
 		throw new BadMethodCallException;
 	}
