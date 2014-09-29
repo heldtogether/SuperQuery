@@ -17,6 +17,10 @@ Author URI: http://joshsephton.com/
 	define('SUPERQUERY_DIR', plugin_dir_path(__FILE__));
 	define('SUPERQUERY_URL', plugin_dir_url(__FILE__));
 
+	if(!defined('SUPERQUERY_MODEL_PREFIX')){
+		define('SUPERQUERY_MODEL_PREFIX', 'SQ_Model_');
+	}
+
 
 // Includes
 	include SUPERQUERY_DIR . 'autoload.php';

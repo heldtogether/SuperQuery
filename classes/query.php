@@ -58,7 +58,7 @@ class SQ_Query {
 
 		$post = $this->next_post();
 
-		$model = 'SQ_Model_'.$post->post_type;
+		$model = SUPERQUERY_MODEL_PREFIX.$post->post_type;
 		if(class_exists($model)){
 			$post = new $model($post);
 		}

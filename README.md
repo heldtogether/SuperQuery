@@ -7,8 +7,12 @@ SuperQuery is a Wordpress plugin which hijacks the `WP_Query` loop to return use
 ## Install
 1. Upload 'superquery' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Create a class in superquery/classes/model. Classes must be named according to PSR-0 so that the autoloader can find them.
+3. Create a class in `superquery/classes/model` for each post type you want to have a custom class. Classes must be named according to PSR-0 so that the autoloader can find them.
 4. Define a `set_post()` method to set properties of you model from `get_post_meta()`.
+
+
+## Config
+By default, SuperQuery will autoload models called `SQ_Model_{Post Type}` from `superquery/classes/model/`. If you want your models to be loaded by a different autoloader then define the constant `SUPERQUERY_MODEL_PREFIX` as appropriate. 
 
 
 ## Example
