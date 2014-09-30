@@ -28,11 +28,17 @@ class SQ_Query {
 	/**
 	 * Construct
 	 *
-	 * @param WP_Query the original post
+	 * @param {WP_Query|array} the original post
 	 * @return void
 	 **/
-	public function __construct(WP_Query $wp_query){
-		$this->wp_query = $wp_query;
+	public function __construct($wp_query){
+		if(is_object($wp_query) && get_class($wp_query) == 'WP_Query'){
+			$this->wp_query = $wp_query;
+		} else if(is_array($wp_query)){
+			$this->wp_query = new WP_Query($wp_query);
+		} else {
+			throw new InvalidArgumentException();
+		}
 	}
 
 
